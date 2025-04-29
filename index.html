@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/all.min.css">
+  <link rel="stylesheet" href="css/resets.css">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Frontend Mentor | Intro section with dropdown navigation</title>
+</head>
+
+<body>
+  <div class="page-container">
+    <header class="header">
+      <div class="header__logo"><img src="images/logo.svg" alt="Snap logo" title="Snap logo" /></div>
+      <div class="header__navcontainer">
+        <nav class="header__navcontainer__inner">
+          <ul class="header__navcontainer__inner__links">
+            <button class="show-mobile mobile-menu-toggle mobile-menu-toggle--close"
+              aria-label="Close Mobile Navigation"></button>
+            <li class="header__navcontainer__inner__menuoption header__navcontainer__inner__submenu">
+              <span>Features</span>
+              <ul
+                class="header__navcontainer__inner__submenu__overlay header__navcontainer__inner__submenu__overlay--left hidden">
+                <li><a href="#" class="header__navcontainer__link header__navcontainer__link--todo">Todo List</a></li>
+                <li><a href="#" class="header__navcontainer__link header__navcontainer__link--calendar">Calendar</a>
+                </li>
+                <li><a href="#" class="header__navcontainer__link header__navcontainer__link--reminders">Reminders</a>
+                </li>
+                <li><a href="#" class="header__navcontainer__link header__navcontainer__link--planning">Planning</a>
+                </li>
+              </ul>
+            </li>
+            <li class="header__navcontainer__inner__menuoption header__navcontainer__inner__submenu">
+              <span>Company</span>
+              <ul
+                class="header__navcontainer__inner__submenu__overlay header__navcontainer__inner__submenu__overlay--right hidden">
+                <li><a href="#" class="header__navcontainer__link">History</a></li>
+                <li><a href="#" class="header__navcontainer__link">Our Team</a></li>
+                <li><a href="#" class="header__navcontainer__link">Blog</a></li>
+              </ul>
+            </li>
+            <li class="header__navcontainer__inner__menuoption"><a href="#"
+                class="header__navcontainer__link">Careers</a>
+            </li>
+            <li class="header__navcontainer__inner__menuoption"><a href="#" class="header__navcontainer__link">About</a>
+            </li>
+          </ul>
+          <div class="header__navcontainer__inner__links header__navcontainer__inner__links--loginregister">
+            <a href="#" class="header__navcontainer__link">Login</a>
+            <a href="#" class="header__navcontainer__link">Register</a>
+          </div>
+        </nav>
+        <div class="show-mobile toggle-container">
+          <button class="mobile-menu-toggle mobile-menu-toggle--open" aria-label="Open Mobile Navigation"></button>
+        </div>
+      </div>
+    </header>
+    <section class="main-section">
+      <div class="main-section__intro">
+        <h1 class="main-section__title">Make <br class="show-desktop" />remote work</h1>
+        <p class="main-section__paragraph">Get your team in sync, no matter your location. Streamline processes,
+          create team rituals, and watch productivity soar.</p>
+        <a href="#" class="main-section__link">Learn more</a>
+        <div class="main-section__clientlogocontainer">
+          <img src="images/client-databiz.svg" alt="Databiz logo" title="Databiz logo" />
+          <img src="images/client-audiophile.svg" alt="Audiophile logo" title="Audiophile logo" />
+          <img src="images/client-meet.svg" alt="Meet logo" title="Meet logo" />
+          <img src="images/client-maker.svg" alt="Maker logo" title="Maker logo" />
+        </div>
+      </div>
+      <div class="main-section__imagecontainer">
+        <picture>
+          <source srcset="images/image-hero-desktop.png" media="(min-width: 768px)">
+          <source srcset="images/image-hero-mobile.png" media="(max-width: 767px)">
+          <img src="images/image-hero-mobile.png" alt="Man standing upright working on laptop"
+            title="Man standing upright working on laptop" />
+        </picture>
+      </div>
+    </section>
+    <div class="show-mobile overlay"></div>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="https://www.andrewcourtney.co.uk">Andrew Courtney</a>.
+    </div>
+  </div>
+  <script src="js/script.js"></script>
+</body>
+
+</html>

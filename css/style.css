@@ -1,0 +1,496 @@
+/*******************
+START - Generic CSS
+*******************/
+:root {
+    --white: hsl(0, 0%, 100%);
+    --off-white: hsl(0, 0%, 98%);
+    --light-grey: hsl(0, 0%, 90%);
+    --grey: hsl(0, 0%, 41%);
+    --black: hsl(0, 0%, 8%);
+}
+
+@font-face {
+    font-family: "Epilogue";
+    src: url("/files/Epilogue-Regular.ttf");
+}
+
+body {
+    font-family: 'Epilogue', Arial, Helvetica, sans-serif;
+    background-color: var(--off-white);
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+.page-container {
+    max-width: 1200px;
+    margin: 2rem auto 0 auto;
+}
+
+/** START show/hide CSS **/
+.show-mobile,
+.show-mobile-inlineblock {
+    display: none;
+}
+
+.hidden {
+    display: none;
+}
+
+/** END show/hide CSS **/
+
+/** START animation CSS **/
+.fade {
+    animation: fade 0.3s forwards;
+}
+
+/** END animation CSS **/
+
+/*******************
+END - Generic CSS
+*******************/
+
+/*******************
+START - Navigation CSS
+*******************/
+.header {
+    display: flex;
+    align-items: center;
+    margin: 0.5rem;
+}
+
+.header__navcontainer__inner__submenu span::after {
+    content: '';
+    display: inline-block;
+    margin-left: 0.5rem;
+    width: 10px;
+    height: 10px;
+    background-image: url('../images/icon-arrow-down.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+}
+
+.header__navcontainer__inner__submenu--open span::after {
+    background-image: url('../images/icon-arrow-up.svg');
+}
+
+.header__navcontainer__inner__submenu span,
+.header__navcontainer__link {
+    color: var(--grey);
+    text-decoration: none;
+}
+
+.header__navcontainer__inner__submenu span:hover,
+.header__navcontainer__link:hover {
+    color: var(--black);
+    cursor: pointer;
+}
+
+.header__navcontainer__inner__submenu__overlay--left .header__navcontainer__link::before {
+    content: '';
+    display: inline-block;
+    margin-right: 1rem;
+    width: 16px;
+    height: 16px;
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.header__navcontainer__inner__submenu__overlay--left .header__navcontainer__link--todo::before {
+    background-image: url('../images/icon-todo.svg');
+}
+
+.header__navcontainer__inner__submenu__overlay--left .header__navcontainer__link--calendar::before {
+    background-image: url('../images/icon-calendar.svg');
+}
+
+.header__navcontainer__inner__submenu__overlay--left .header__navcontainer__link--reminders::before {
+    background-image: url('../images/icon-reminders.svg');
+}
+
+.header__navcontainer__inner__submenu__overlay--left .header__navcontainer__link--planning::before {
+    background-image: url('../images/icon-planning.svg');
+}
+
+.header__navcontainer__inner__links {
+    display: flex;
+}
+
+.header__navcontainer__inner__links--loginregister {
+    align-items: center;
+}
+
+.header__navcontainer__inner__links--loginregister .header__navcontainer__link {
+    padding: 0.75rem 1rem;
+    border-radius: 1rem;
+}
+
+.header__navcontainer__inner__links--loginregister .header__navcontainer__link:hover,
+.header__navcontainer__inner__links--loginregister .header__navcontainer__link:active,
+.header__navcontainer__inner__links--loginregister .header__navcontainer__link:focus {
+    box-shadow: 0 0 0 2px #1d1d1d;
+}
+
+/*******************
+END - Navigation CSS
+*******************/
+
+/*******************
+START - Main Section CSS
+*******************/
+.main-section {
+    display: flex;
+    align-items: center;
+    margin: 5rem 5rem 2rem 5rem;
+    gap: 4rem;
+}
+
+.main-section__title {
+    margin-bottom: 3rem;
+    font-size: 4rem;
+}
+
+.main-section__paragraph {
+    margin-bottom: 3rem;
+    font-size: 1.125rem;
+    color: var(--grey);
+    line-height: 1.5rem;
+}
+
+.main-section__link {
+    display: inline-block;
+    padding: 1rem 1.5rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--white);
+    text-decoration: none;
+    background-color: var(--black);
+    border: 1px solid transparent;
+    border-radius: 1rem;
+}
+
+.main-section__link:hover {
+    background-color: var(--off-white);
+    border: 1px solid var(--black);
+    color: var(--black);
+}
+
+.main-section__clientlogocontainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.main-section__clientlogocontainer img {
+    align-self: center;
+}
+
+/*******************
+END - Main Section CSS
+*******************/
+
+/*******************
+START - Attribution CSS
+*******************/
+.attribution{
+    margin: 4rem 0 2rem 0;
+    font-size: 0.75rem;
+    text-align: center;
+}
+
+.attribution a{
+    color: darkblue;
+}
+/*******************
+END - Attribution CSS
+*******************/
+
+
+/*******************
+START - Media Queries CSS
+*******************/
+@media (min-width: 800px) {
+
+    /** START menu CSS **/
+    button.toggle {
+        display: none;
+    }
+
+    .header__logo {
+        display: flex;
+        align-items: center;
+    }
+
+    .header__navcontainer {
+        width: 100%;
+    }
+
+    .header__navcontainer__inner {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin-left: 2.5rem;
+    }
+
+    .header__navcontainer__inner ul.menu {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    .header__navcontainer__inner__links {
+        gap: 2rem;
+    }
+
+    .header__navcontainer__inner__submenu__overlay {
+        position: absolute;
+        background-color: var(--off-white);
+        box-shadow: 5px 10px 50px 10px var(--light-grey);
+        margin: 1rem 0 1rem;
+        padding: 1.5rem;
+        border-radius: .625rem;
+    }
+
+    .header__navcontainer__inner__submenu__overlay--left {
+        margin-left: -5rem;
+    }
+
+    .header__navcontainer__inner__submenu__overlay--right {
+        margin-left: 0;
+    }
+
+    .header__navcontainer__inner__submenu__overlay li:not(:first-child) {
+        margin-top: 1rem;
+    }
+
+    /** END menu CSS **/
+}
+
+@media(min-width: 992px) {
+    .header__navcontainer__inner {
+        margin-left: 4rem;
+    }
+}
+
+@media(max-width: 767px) {
+
+    /** START menu CSS **/
+    .header{
+        margin: 1rem;
+    }
+    /** END menu CSS **/
+
+    /** START show/hide CSS **/
+    .show-mobile {
+        display: block;
+    }
+
+    .show-mobile-inlineblock {
+        display: inline-block;
+    }
+
+    .show-desktop,
+    .show-desktop-inlineblock {
+        display: none;
+    }
+
+    /** END show/hide CSS **/
+
+    /** START main section CSS **/
+    .main-section {
+        margin: 0;
+        margin-top: 4rem;
+        flex-direction: column-reverse;
+        gap: 3rem;
+    }
+
+    .main-section__intro {
+        margin: 0 0.5rem;
+        text-align: center;
+    }
+
+    .main-section__title,
+    .main-section__paragraph {
+        margin-bottom: 2rem;
+    }
+
+    .main-section__title {
+        font-size: 2.5rem;
+        line-height: 2.875rem;
+    }
+
+    .main-section__clientlogocontainer {
+        justify-content: center;
+    }
+
+    /** END main section CSS **/
+}
+
+@media (max-width: 799px) {
+
+    /** START menu CSS **/
+    .header {
+        justify-content: space-between;
+    }
+
+    .header__navcontainer__inner {
+        z-index: 11;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        width: 240px;
+        right: -240px;
+        padding: 0;
+        transition: all 0.3s ease-in-out;
+        background-color: var(--white);
+        border-right: 2px solid #ddd;
+        text-align: right;
+    }
+
+    .header__navcontainer__inner.show {
+        right: 0;
+    }
+
+    .header__navcontainer__inner ul,
+    .header__navcontainer__inner__subtitle {
+        text-align: left;
+    }
+
+    .header__navcontainer__inner>ul {
+        margin-top: 1rem;
+    }
+
+    .header__navcontainer__inner li,
+    .header__navcontainer__inner li a {
+        border-radius: .25rem;
+    }
+
+    .header__navcontainer__inner li,
+    .header__navcontainer__inner__submenu span {
+        display: block;
+        margin: 0;
+    }
+
+    .header__navcontainer__inner__submenu__overlay{
+        padding-top: 0.75rem;
+        padding-left: 1rem;
+    }
+
+    .header__navcontainer__inner__submenu__overlay>li:not(:last-child) {
+        margin-bottom: 1rem;
+    }
+
+    .header__navcontainer__inner__submenu__overlay>li:first-child {
+        margin-top: 1rem;
+    }
+
+    .header__navcontainer__inner__menuoption {
+        margin: 0.5rem 0.75rem;
+        padding: 1rem 1.5rem;
+    }
+
+    .header__navcontainer__inner>li:last-child {
+        margin-bottom: 0;
+        border-bottom: 0;
+    }
+
+    .header__navcontainer__inner li a {
+        border-bottom: 0;
+    }
+
+    .header__navcontainer__inner__subtitle {
+        padding: 1.5rem 0 0.25rem 0.75rem;
+        border-bottom: 1px solid #f4f4f4;
+        font-weight: 400;
+    }
+
+    .header__navcontainer__inner__links{
+        flex-direction: column;
+    }
+
+    .header__navcontainer__inner__links--loginregister {
+        margin-top: 1rem;
+        padding: 0 1.5rem;
+    }
+
+    .header__navcontainer__inner__links--loginregister .header__navcontainer__link {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
+    .header__navcontainer__inner__links--loginregister .header__navcontainer__link:not(:last-child) {
+        margin-bottom: 1rem;
+    }
+
+    .toggle-container {
+        display: flex;
+        align-items: center;
+    }
+
+    .mobile-menu-toggle {
+        border: 0;
+        background-color: var(--white);
+        background-repeat: no-repeat;
+        background-size: cover;
+        cursor: pointer;
+    }
+
+    .mobile-menu-toggle--open {
+        width: 2rem;
+        height: 1.125rem;
+        background-image: url('../images/icon-menu.svg');
+    }
+
+    .mobile-menu-toggle--close {
+        align-self: flex-end;
+        margin-right: 1rem;
+        margin-bottom: 1rem;
+        width: 1.875rem;
+        height: 1.875rem;
+        background-image: url('../images/icon-close-menu.svg');
+    }
+
+    .overlay {
+        z-index: 10;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(25, 25, 25, 0.8);
+        opacity: 0;
+        visibility: hidden;
+        cursor: pointer;
+    }
+
+    /** END menu CSS **/
+}
+
+/*******************
+END - Media Queries CSS
+*******************/
+
+/*******************
+START - Animation CSS
+*******************/
+@keyframes fade {
+    0% {
+        opacity: 0;
+        visibility: visible;
+    }
+
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+/*******************
+END - Animation CSS
+*******************/
